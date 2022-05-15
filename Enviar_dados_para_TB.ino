@@ -1,6 +1,12 @@
 #include "ThingsBoard.h"
+#include "DHT.h"
 
+#define DHTPIN D3
+#define DHTTYPE DHT11
 #include <ESP8266WiFi.h>
+
+DHT dht(DHTPIN, DHTTYPE);
+
 
 
 #define WIFI_AP             "WIFI_AP"
@@ -24,6 +30,11 @@ void setup() {
   Serial.begin(SERIAL_DEBUG_BAUD);
   WiFi.begin(WIFI_AP, WIFI_PASSWORD);
   InitWiFi();
+
+  Serial.begin(115200);
+  Serial.println(F("DHT11 test!"));
+
+  dht.begin();
 }
 
 void loop() {
@@ -43,6 +54,22 @@ void loop() {
       Serial.println("Failed to connect");
       return;
     }
+
+    delay(2000);
+
+  float u = dht.readHumidity();
+  float t = dht.readTemperature();
+  
+  if (isnan(h) || isnan(t)) {
+    Serial.println(F("Failed to read from DHT sensor!"));
+    return;
+  }
+  Serial.print(F("Umidade: "));
+  Serial.print(u);
+  Serial.print(F("%  Temperatura: "));
+  Serial.print(t);
+  Serial.print(F("°C \n"));
+
   }
 
   Serial.println("Sending data...");
@@ -51,8 +78,8 @@ void loop() {
   // See https://thingsboard.io/docs/reference/mqtt-api/#telemetry-upload-api
   // for more details
 
-  tb.sendTelemetryInt("temperature", 30);
-  tb.sendTelemetryFloat("humidity", 60);
+  tb.sendTelemetryInt("Temperatura", t);
+  tb.sendTelemetryFloat("Umidade", u);
 
   tb.loop();
 }
