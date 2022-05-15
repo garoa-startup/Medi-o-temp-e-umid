@@ -57,8 +57,8 @@ void loop() {
 
     delay(2000);
 
-  float u = dht.readHumidity();
   float t = dht.readTemperature();
+  float u = dht.readHumidity();
   
   if (isnan(h) || isnan(t)) {
     Serial.println(F("Failed to read from DHT sensor!"));
@@ -78,8 +78,9 @@ void loop() {
   // See https://thingsboard.io/docs/reference/mqtt-api/#telemetry-upload-api
   // for more details
 
-  tb.sendTelemetryInt("Temperatura", t);
-  tb.sendTelemetryFloat("Umidade", u);
+
+  tb.sendTelemetryFloat("Temperatura", dht.readTemperature());
+  tb.sendTelemetryFloat("Umidade", dht.readHumidity());
 
   tb.loop();
 }
