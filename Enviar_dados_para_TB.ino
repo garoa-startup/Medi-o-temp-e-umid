@@ -3,9 +3,9 @@
 #include <ESP8266WiFi.h>
 
 
-#define WIFI_AP             "Oi Fibra"
-#define WIFI_PASSWORD       "029977BNV"
-
+#define WIFI_AP             "WIFI_AP"
+#define WIFI_PASSWORD       "WIFI_PASSWORD"
+//token do nosso thingsboard
 #define TOKEN               "UJg3Lz6B1CC9mSU3LTdn"
 #define THINGSBOARD_SERVER  "demo.thingsboard.io"
 
