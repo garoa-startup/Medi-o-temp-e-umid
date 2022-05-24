@@ -1,5 +1,6 @@
-# Medi-o-temp-e-umid
-# Garoa
+# Medição de Temperatura e Umidade
+
+## Empresa Garoa
 Somo uma empresa de inovação que trabalha com previsões séries temporais, análise e visualização de dados e o objetivo de transformar as cidades em "smart cities".
 
 ### Links
@@ -14,13 +15,13 @@ Somo uma empresa de inovação que trabalha com previsões séries temporais, an
 ![desktop screenshot](https://github.com/garoa-startup/garoa-site/blob/main/twitter.png)
 ---
 
-## Photos do nosso Hardware
-![](https://github.com/garoa-startup/Medi-o-temp-e-umid/blob/main/photos/WhatsApp%20Image%202022-05-23%20at%2021.48.00.jpeg)
-![](https://github.com/garoa-startup/Medi-o-temp-e-umid/blob/main/photos/WhatsApp%20Image%202022-05-23%20at%2021.48.00%20(1).jpeg)
+### Photos do nosso Hardware
+- ![](https://github.com/garoa-startup/Medi-o-temp-e-umid/blob/main/photos/WhatsApp%20Image%202022-05-23%20at%2021.48.00.jpeg)
+- ![](https://github.com/garoa-startup/Medi-o-temp-e-umid/blob/main/photos/WhatsApp%20Image%202022-05-23%20at%2021.48.00%20(1).jpeg)
 
 ---
 
-## Desenvolvedores
+### Desenvolvedores
 
 - **Augusto**
 - **Brendo**
